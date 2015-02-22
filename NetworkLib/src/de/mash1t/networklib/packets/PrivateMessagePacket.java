@@ -21,33 +21,47 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used for establishing a connection
+ * Used for private messages
  *
- * @author Manuel Schmid
+ * @author Manuel Schmid, Fabian Fink
  */
-public class ConnectPacket extends Packet {
+public class PrivateMessagePacket extends MessagePacket {
 
-    protected final String name;
+    protected String sender;
+    protected String receiver;
 
     /**
-     * Set up packet type and name
+     * Set up packet type, sender, receiver and message
      *
-     * @param name
+     * @param message message to send
+     * @param sender sender
+     * @param receiver receiver
      */
-    public ConnectPacket(String name) {
-        this.name = name;
-        this.packetType = PacketType.Connect;
+    public PrivateMessagePacket(String message, String sender, String receiver) {
+        this.message = message;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.packetType = PacketType.PM;
     }
 
     /**
-     * Returns the name of the client who wants to connect
+     * Returns the sender of the packet
      *
-     * @return name
+     * @return
      */
-    public String getName() {
-        return this.name;
+    public String getSender() {
+        return this.sender;
+    }
+
+    /**
+     * Returns the receiver of the packet
+     *
+     * @return
+     */
+    public String getReceiver() {
+        return this.receiver;
     }
 }

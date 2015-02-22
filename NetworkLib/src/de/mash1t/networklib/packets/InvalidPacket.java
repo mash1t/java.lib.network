@@ -21,19 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used for closing a connection
+ * Used as a placeholder for invalid internal results
  *
  * @author Manuel Schmid
  */
-public class DisconnectPacket extends Packet {
+public class InvalidPacket extends Packet {
 
     /**
      * Set up packet type
      */
-    public DisconnectPacket() {
-        this.packetType = PacketType.Disconnect;
+    public InvalidPacket() {
+        this.packetType = PacketType.Invalid;
+        //this.prepare();
     }
 }

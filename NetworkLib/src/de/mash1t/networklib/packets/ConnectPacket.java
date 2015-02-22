@@ -21,16 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Enum for all available UserListPacketTypes
+ * Used for establishing a connection
  *
  * @author Manuel Schmid
  */
-public enum UserListPacketType {
+public class ConnectPacket extends Packet {
 
-    Full,
-    Connected,
-    Disconnected;
+    protected final String name;
+
+    /**
+     * Set up packet type and name
+     *
+     * @param name
+     */
+    public ConnectPacket(String name) {
+        this.name = name;
+        this.packetType = PacketType.Connect;
+    }
+
+    /**
+     * Returns the name of the client who wants to connect
+     *
+     * @return name
+     */
+    public String getName() {
+        return this.name;
+    }
 }

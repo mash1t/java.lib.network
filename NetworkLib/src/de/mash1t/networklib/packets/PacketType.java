@@ -21,20 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used as a placeholder for invalid internal results
+ * Enum for all available packet identifiers If you add a new custom packet, don't forget to add its identifier here
  *
- * @author Manuel Schmid
+ * @author Manuel Schmid, Fabian Fink
  */
-public class InvalidPacket extends Packet {
+public enum PacketType {
 
-    /**
-     * Set up packet type
-     */
-    public InvalidPacket() {
-        this.packetType = PacketType.Invalid;
-        //this.prepare();
-    }
+    Connect,
+    Disconnect,
+    GM,
+    Info,
+    Invalid,
+    Message, // Abstract
+    Userlist,
+    Kick,
+    Packet, // Abstract
+    PM,
 }

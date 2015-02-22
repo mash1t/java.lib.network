@@ -21,31 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used to send information (e.g. from Server to client)
+ * Used as a body for all packets which contain a message (such as InfoPacket)
  *
  * @author Manuel Schmid
  */
-public class InfoPacket extends MessagePacket {
+public abstract class MessagePacket extends Packet {
+
+    protected PacketType packetType = PacketType.Message;
+    protected String message;
 
     /**
-     * Set up packet type and message
-     *
-     * @param message
-     */
-    public InfoPacket(String message) {
-        this.message = message;
-        this.packetType = PacketType.Info;
-    }
-
-    /**
-     * Returns the sent message
+     * Getter for message
      *
      * @return mesage
      */
-    @Override
     public String getMessage() {
         return this.message;
     }

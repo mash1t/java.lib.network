@@ -21,15 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.methods;
+package de.mash1t.networklib.packets;
 
 /**
- * Enum for all available network protocol types
+ * Used for closing a connection
  *
  * @author Manuel Schmid
  */
-public enum NetworkProtocolType {
+public class DisconnectPacket extends Packet {
 
-    TCP,
-    //UDP;
+    /**
+     * Set up packet type
+     */
+    public DisconnectPacket() {
+        this.packetType = PacketType.Disconnect;
+    }
 }

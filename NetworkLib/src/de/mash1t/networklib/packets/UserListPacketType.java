@@ -21,24 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used as a body for all packets which contain a message (such as InfoPacket)
+ * Enum for all available UserListPacketTypes
  *
  * @author Manuel Schmid
  */
-public abstract class MessagePacket extends Packet {
+public enum UserListPacketType {
 
-    protected PacketType packetType = PacketType.Message;
-    protected String message;
-
-    /**
-     * Getter for message
-     *
-     * @return mesage
-     */
-    public String getMessage() {
-        return this.message;
-    }
+    Full,
+    Connected,
+    Disconnected;
 }

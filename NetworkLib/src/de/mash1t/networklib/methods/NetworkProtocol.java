@@ -21,33 +21,43 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.methods;
+
+import de.mash1t.networklib.packets.Packet;
 
 /**
- * Used for kicking clients
+ * Interface for a network protocol
  *
  * @author Manuel Schmid
  */
-public class KickPacket extends Packet {
-
-    protected String message;
+public interface NetworkProtocol {
 
     /**
-     * Set up packet type and kick message
+     * Returns the IP of the currently connected client
      *
-     * @param message
+     * @return IP of client
      */
-    public KickPacket(String message) {
-        this.message = message;
-        this.packetType = PacketType.Kick;
-    }
+    public String getIP();
 
     /**
-     * Returns the reason why somebody has been kicked
+     * Sends a message
      *
-     * @return reason
+     * @param packet
+     * @return
      */
-    public String getMessage() {
-        return "You have been kicked from the server, reason: " + this.message;
-    }
+    public boolean send(Packet packet);
+
+    /**
+     * Reads an object
+     *
+     * @return
+     */
+    public Packet read();
+
+    /**
+     * Closes all opened streams
+     *
+     * @return everything closed?
+     */
+    public boolean close();
 }

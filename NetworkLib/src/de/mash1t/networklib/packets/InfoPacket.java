@@ -21,36 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used for group messages
+ * Used to send information (e.g. from Server to client)
  *
  * @author Manuel Schmid
  */
-public class GroupMessagePacket extends MessagePacket {
-
-    // Sender of the packet
-    protected String sender;
+public class InfoPacket extends MessagePacket {
 
     /**
-     * Set up packet type, message to send and sender name
+     * Set up packet type and message
      *
-     * @param message message to send
-     * @param sender name of sender
+     * @param message
      */
-    public GroupMessagePacket(String message, String sender) {
+    public InfoPacket(String message) {
         this.message = message;
-        this.sender = sender;
-        this.packetType = PacketType.GM;
+        this.packetType = PacketType.Info;
     }
 
     /**
-     * Returns the sender of the packet
+     * Returns the sent message
      *
-     * @return
+     * @return mesage
      */
-    public String getSender() {
-        return this.sender;
+    @Override
+    public String getMessage() {
+        return this.message;
     }
 }

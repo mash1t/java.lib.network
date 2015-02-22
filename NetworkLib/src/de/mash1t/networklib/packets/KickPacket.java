@@ -21,23 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Enum for all available packet identifiers If you add a new custom packet, don't forget to add its identifier here
+ * Used for kicking clients
  *
- * @author Manuel Schmid, Fabian Fink
+ * @author Manuel Schmid
  */
-public enum PacketType {
+public class KickPacket extends Packet {
 
-    Connect,
-    Disconnect,
-    GM,
-    Info,
-    Invalid,
-    Message, // Abstract
-    Userlist,
-    Kick,
-    Packet, // Abstract
-    PM,
+    protected String message;
+
+    /**
+     * Set up packet type and kick message
+     *
+     * @param message
+     */
+    public KickPacket(String message) {
+        this.message = message;
+        this.packetType = PacketType.Kick;
+    }
+
+    /**
+     * Returns the reason why somebody has been kicked
+     *
+     * @return reason
+     */
+    public String getMessage() {
+        return "You have been kicked from the server, reason: " + this.message;
+    }
 }

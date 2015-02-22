@@ -21,30 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.packets;
+package de.mash1t.networklib.packets;
 
 /**
- * Used for private messages
+ * Used for group messages
  *
- * @author Manuel Schmid, Fabian Fink
+ * @author Manuel Schmid
  */
-public class PrivateMessagePacket extends MessagePacket {
+public class GroupMessagePacket extends MessagePacket {
 
+    // Sender of the packet
     protected String sender;
-    protected String receiver;
 
     /**
-     * Set up packet type, sender, receiver and message
+     * Set up packet type, message to send and sender name
      *
      * @param message message to send
-     * @param sender sender
-     * @param receiver receiver
+     * @param sender name of sender
      */
-    public PrivateMessagePacket(String message, String sender, String receiver) {
+    public GroupMessagePacket(String message, String sender) {
         this.message = message;
         this.sender = sender;
-        this.receiver = receiver;
-        this.packetType = PacketType.PM;
+        this.packetType = PacketType.GM;
     }
 
     /**
@@ -54,14 +52,5 @@ public class PrivateMessagePacket extends MessagePacket {
      */
     public String getSender() {
         return this.sender;
-    }
-
-    /**
-     * Returns the receiver of the packet
-     *
-     * @return
-     */
-    public String getReceiver() {
-        return this.receiver;
     }
 }

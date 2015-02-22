@@ -21,43 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.methods;
-
-import de.mash1t.networking.packets.Packet;
+package de.mash1t.networklib.methods;
 
 /**
- * Interface for a network protocol
+ * Enum for all available network protocol types
  *
  * @author Manuel Schmid
  */
-public interface NetworkProtocol {
+public enum NetworkProtocolType {
 
-    /**
-     * Returns the IP of the currently connected client
-     *
-     * @return IP of client
-     */
-    public String getIP();
-
-    /**
-     * Sends a message
-     *
-     * @param packet
-     * @return
-     */
-    public boolean send(Packet packet);
-
-    /**
-     * Reads an object
-     *
-     * @return
-     */
-    public Packet read();
-
-    /**
-     * Closes all opened streams
-     *
-     * @return everything closed?
-     */
-    public boolean close();
+    TCP,
+    //UDP;
 }

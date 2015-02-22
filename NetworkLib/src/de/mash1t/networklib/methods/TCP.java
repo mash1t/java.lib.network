@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networking.methods;
+package de.mash1t.networklib.methods;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -30,8 +30,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import de.mash1t.networking.packets.Packet;
-import de.mash1t.networking.packets.InvalidPacket;
+import de.mash1t.networklib.packets.Packet;
+import de.mash1t.networklib.packets.InvalidPacket;
 
 /**
  * Class for the network protocol TCP

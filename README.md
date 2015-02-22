@@ -39,6 +39,6 @@ License
 ----
 This software is under MIT-License.
 
-[this link]:https://github.com/mash1t/java.lib.network/raw/master/dist/NetworkLib.jar
+[this link]:https://github.com/mash1t/java.lib.network/raw/master/NetworkLib/dist/NetworkLib.jar
 [homepage]:http://mash1t.de/
 [Twitter]:https://twitter.com/mash1t

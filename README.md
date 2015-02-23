@@ -31,7 +31,6 @@ If you have any questions or feature requests, don't hesitate to contact me on [
 
 ### Current Todo's
 
- - [ ] Add tests
  - [ ] Add support for UDP
  - [ ] Add support for config files
 

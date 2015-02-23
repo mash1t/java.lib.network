@@ -30,7 +30,6 @@ package de.mash1t.networklib.packets;
  */
 public abstract class MessagePacket extends Packet {
 
-    protected PacketType packetType = PacketType.Message;
     protected String message;
 
     /**

@@ -28,8 +28,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import de.mash1t.networklib.packets.Packet;
 import de.mash1t.networklib.packets.InvalidPacket;
 
@@ -54,8 +52,8 @@ public class TCP implements NetworkProtocol {
      */
     public TCP(Socket clientSocket) throws IOException {
         this.clientSocket = clientSocket;
-        inStream = new ObjectInputStream(clientSocket.getInputStream());
         outStream = new ObjectOutputStream(clientSocket.getOutputStream());
+        inStream = new ObjectInputStream(clientSocket.getInputStream());
         ip = clientSocket.getInetAddress();
         ipString = ip.toString();
     }
@@ -85,7 +83,7 @@ public class TCP implements NetworkProtocol {
                 return readPacket;
             }
         } catch (IOException | ClassNotFoundException ex) {
-
+            
         }
         return new InvalidPacket();
     }
@@ -99,7 +97,7 @@ public class TCP implements NetworkProtocol {
             clientSocket.close();
             return true;
         } catch (IOException ex) {
-            Logger.getLogger(TCP.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         return false;
     }

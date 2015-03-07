@@ -30,8 +30,8 @@ package de.mash1t.networklib.packets;
  */
 public class PrivateMessagePacket extends MessagePacket {
 
-    protected String sender;
-    protected String receiver;
+    protected final String sender;
+    protected final String receiver;
 
     /**
      * Set up packet type, sender, receiver and message

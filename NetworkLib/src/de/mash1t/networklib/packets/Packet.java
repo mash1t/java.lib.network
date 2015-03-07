@@ -34,7 +34,7 @@ public abstract class Packet implements Serializable {
 
     protected PacketType packetType = PacketType.Packet;
     //protected String senderAlias = "Server";
-    protected boolean isPrepared = false;
+//    protected boolean isPrepared = false;
 
     /**
      * Returns the packet type
@@ -63,10 +63,10 @@ public abstract class Packet implements Serializable {
 //        this.senderAlias = senderAlias;
 //    }
 //
-    /**
-     * Sets the internal boolean isPrepared to true/false depending on what the current value is Use this for e.g. encrypting/decrypting a specific message
-     */
-    public void switchPrepared() {
-        this.isPrepared = !this.isPrepared;
-    }
+//    /**
+//     * Sets the internal boolean isPrepared to true/false depending on what the current value is Use this for e.g. encrypting/decrypting a specific message
+//     */
+//    public void switchPrepared() {
+//        this.isPrepared = !this.isPrepared;
+//    }
 }

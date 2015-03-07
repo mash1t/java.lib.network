@@ -31,7 +31,7 @@ package de.mash1t.networklib.packets;
 public class GroupMessagePacket extends MessagePacket {
 
     // Sender of the packet
-    protected String sender;
+    protected final String sender;
 
     /**
      * Set up packet type, message to send and sender name

@@ -24,21 +24,22 @@
 package de.mash1t.networklib.packets;
 
 /**
- * Enum for all available packet identifiers If you add a new custom packet, don't forget to add its identifier here
+ * Used for group messages
  *
- * @author Manuel Schmid, Fabian Fink
+ * @author Manuel Schmid
  */
-public enum PacketType {
+public class PublicKeyPacket extends Packet {
 
-    Connect,
-    Disconnect,
-    GM,
-    Info,
-    Invalid,
-    Message, // Abstract
-    Userlist,
-    Kick,
-    Packet, // Abstract
-    PublicKey,
-    PM
+    // Sender of the packet
+    protected final Object publicKey;
+
+    /**
+     * Set up packet type, publicKey to send and sender name
+     *
+     * @param publicKey public key used for RSA
+     */
+    public PublicKeyPacket(Object publicKey) {
+        this.publicKey = publicKey;
+        this.packetType = PacketType.PublicKey;
+    }
 }

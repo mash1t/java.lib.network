@@ -23,6 +23,8 @@
  */
 package de.mash1t.networklib.packets;
 
+import org.bouncycastle.openpgp.PGPPublicKey;
+
 /**
  * Used for establishing a connection
  *
@@ -31,14 +33,28 @@ package de.mash1t.networklib.packets;
 public class ConnectPacket extends Packet {
 
     protected final String name;
+    protected final PGPPublicKey pubKey;
 
     /**
      * Set up packet type and name
      *
-     * @param name
+     * @param name nickname for the chat
      */
     public ConnectPacket(String name) {
         this.name = name;
+        this.pubKey = null;
+        this.packetType = PacketType.Connect;
+    }
+    
+        /**
+     * Set up packet type, name and public key for RSA
+     *
+     * @param name nickname for the chat
+     * @param pubKey public key for encryption
+     */
+    public ConnectPacket(String name, PGPPublicKey pubKey) {
+        this.name = name;
+        this.pubKey = pubKey;
         this.packetType = PacketType.Connect;
     }
 
@@ -49,5 +65,14 @@ public class ConnectPacket extends Packet {
      */
     public String getName() {
         return this.name;
+    }
+    
+        /**
+     * Returns the name of the client who wants to connect
+     *
+     * @return name
+     */
+    public PGPPublicKey getKey() {
+        return this.pubKey;
     }
 }

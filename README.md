@@ -7,7 +7,7 @@
 - Easy extendability, multiple abstract classes and interfaces
 
 ### Version
-0.1.0
+0.1.1
 
 ### Download
 - Download the NetworkLib directly with [this link] (latest release)
@@ -38,6 +38,6 @@ License
 ----
 This software is under MIT-License.
 
-[this link]:https://github.com/mash1t/java.lib.network/raw/0.1.0/NetworkLib/dist/NetworkLib.jar
+[this link]:https://github.com/mash1t/java.lib.network/raw/0.1.1/NetworkLib/dist/NetworkLib.jar
 [homepage]:http://mash1t.de/
 [Twitter]:https://twitter.com/mash1t

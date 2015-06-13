@@ -83,7 +83,7 @@ public class TCP implements NetworkProtocol {
                 return readPacket;
             }
         } catch (IOException | ClassNotFoundException ex) {
-            
+
         }
         return new InvalidPacket();
     }
@@ -97,9 +97,8 @@ public class TCP implements NetworkProtocol {
             clientSocket.close();
             return true;
         } catch (IOException ex) {
-            
+            return false;
         }
-        return false;
     }
 
     @Override

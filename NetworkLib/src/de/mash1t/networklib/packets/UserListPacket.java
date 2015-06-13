@@ -32,8 +32,8 @@ import java.util.List;
  */
 public class UserListPacket extends Packet {
 
-    protected List<String> users;
-    protected String user;
+    protected final List<String> users;
+    protected final String user;
     private UserListPacketType ulPacketType = UserListPacketType.Full;
 
     /**
@@ -42,6 +42,7 @@ public class UserListPacket extends Packet {
      * @param userlist
      */
     public UserListPacket(List userlist) {
+        this.user = null;
         this.users = userlist;
         this.ulPacketType = UserListPacketType.Full;
         this.packetType = PacketType.Userlist;
@@ -55,6 +56,7 @@ public class UserListPacket extends Packet {
      */
     public UserListPacket(String user, UserListPacketType ulPacketType) {
         this.user = user;
+        this.users = null;
         this.ulPacketType = ulPacketType;
         this.packetType = PacketType.Userlist;
     }

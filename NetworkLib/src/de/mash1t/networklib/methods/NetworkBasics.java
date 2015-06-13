@@ -15,7 +15,6 @@ import java.net.Socket;
 public class NetworkBasics {
 
     // Preset network protocol type
-
     public static NetworkProtocolType nwpType = NetworkProtocolType.TCP;
 
     /**

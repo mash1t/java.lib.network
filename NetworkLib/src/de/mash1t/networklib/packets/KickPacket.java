@@ -48,6 +48,6 @@ public class KickPacket extends Packet {
      * @return reason
      */
     public String getMessage() {
-        return "You have been kicked from the server, reason: " + this.message;
+        return "You have been kicked, reason: " + this.message;
     }
 }

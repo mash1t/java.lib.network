@@ -1,13 +1,13 @@
 # Java Network Library
 
 ### Features
-- Full support for TCP
+- Full support for TCP-IP
 - Data transfer through packets
 - Symetrical code for Client and Server
 - Easy extendability, multiple abstract classes and interfaces
 
 ### Version
-0.1.1
+0.1.2
 
 ### Download
 - Download the NetworkLib directly with [this link] (latest release)
@@ -32,7 +32,6 @@ If you have any questions or feature requests, don't hesitate to contact me on [
 ### Current Todo's
 
  - [ ] Add support for UDP
- - [ ] Add support for config files
 
 License
 ----

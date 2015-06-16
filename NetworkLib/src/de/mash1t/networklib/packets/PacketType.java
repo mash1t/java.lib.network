@@ -39,6 +39,5 @@ public enum PacketType {
     Userlist,
     Kick,
     Packet, // Abstract
-    PublicKey,
-    PM
+    PM,
 }

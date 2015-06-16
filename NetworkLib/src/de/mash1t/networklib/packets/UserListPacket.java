@@ -23,8 +23,7 @@
  */
 package de.mash1t.networklib.packets;
 
-import java.util.Map;
-import org.bouncycastle.openpgp.PGPPublicKey;
+import java.util.List;
 
 /**
  * Used for a userlist
@@ -33,7 +32,7 @@ import org.bouncycastle.openpgp.PGPPublicKey;
  */
 public class UserListPacket extends Packet {
 
-    protected final Map<String, PGPPublicKey> users;
+    protected final List<String> users;
     protected final String user;
     private UserListPacketType ulPacketType = UserListPacketType.Full;
 
@@ -42,7 +41,7 @@ public class UserListPacket extends Packet {
      *
      * @param userlist
      */
-    public UserListPacket(Map userlist) {
+    public UserListPacket(List userlist) {
         this.user = null;
         this.users = userlist;
         this.ulPacketType = UserListPacketType.Full;
@@ -67,7 +66,7 @@ public class UserListPacket extends Packet {
      *
      * @return users
      */
-    public Map<String, PGPPublicKey> getUserList() {
+    public List<String> getUserList() {
         return this.users;
     }
 

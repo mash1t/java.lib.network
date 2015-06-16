@@ -24,30 +24,22 @@
 package de.mash1t.networklib.packets;
 
 /**
- * Used for establishing a connection
+ * Used for group messages
  *
  * @author Manuel Schmid
  */
-public class ConnectPacket extends Packet {
+public class PublicKeyPacket extends Packet {
 
-    protected final String name;
-
-    /**
-     * Set up packet type and name
-     *
-     * @param name
-     */
-    public ConnectPacket(String name) {
-        this.name = name;
-        this.packetType = PacketType.Connect;
-    }
+    // Sender of the packet
+    protected final Object publicKey;
 
     /**
-     * Returns the name of the client who wants to connect
+     * Set up packet type, publicKey to send and sender name
      *
-     * @return name
+     * @param publicKey public key used for RSA
      */
-    public String getName() {
-        return this.name;
+    public PublicKeyPacket(Object publicKey) {
+        this.publicKey = publicKey;
+        this.packetType = PacketType.PublicKey;
     }
 }

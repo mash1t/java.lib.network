@@ -49,4 +49,13 @@ public class NetworkBasics {
                 return new TCP(socket);
         }
     }
+
+    /**
+     * Sets the NetworkProtocolType
+     *
+     * @param nwpType NetworkProtocolType to set
+     */
+    public static void setNetworkProtocolType(NetworkProtocolType nwpType) {
+        NetworkBasics.nwpType = nwpType;
+    }
 }

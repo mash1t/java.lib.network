@@ -38,9 +38,9 @@ import de.mash1t.networklib.packets.InvalidPacket;
  */
 public class TCP implements NetworkProtocol {
 
-    public ObjectInputStream inStream = null;
-    public ObjectOutputStream outStream = null;
-    private Socket clientSocket = null;
+    private final ObjectInputStream inStream;
+    private final ObjectOutputStream outStream;
+    private final Socket clientSocket;
     private final InetAddress ip;
     private final String ipString;
 

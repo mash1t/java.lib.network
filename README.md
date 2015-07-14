@@ -7,7 +7,7 @@
 - Easy extendability, multiple abstract classes and interfaces
 
 ### Version
-0.1.2
+0.1.3
 
 ### Download
 - Download the NetworkLib directly with [this link] (latest release)

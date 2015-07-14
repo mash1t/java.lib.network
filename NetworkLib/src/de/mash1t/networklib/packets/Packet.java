@@ -33,9 +33,7 @@ import java.io.Serializable;
 public abstract class Packet implements Serializable {
 
     protected PacketType packetType = PacketType.Packet;
-    //protected String senderAlias = "Server";
-//    protected boolean isPrepared = false;
-
+   
     /**
      * Returns the packet type
      *
@@ -44,29 +42,4 @@ public abstract class Packet implements Serializable {
     public PacketType getType() {
         return this.packetType;
     }
-
-//    /**
-//     * Getter for senderAlias
-//     *
-//     * @return
-//     */
-//    public String getSenderAlias() {
-//        return this.senderAlias;
-//    }
-//
-//    /**
-//     * Setter for senderAlias protected because of one time usage of packets
-//     *
-//     * @param senderAlias
-//     */
-//    protected void setSenderAlias(String senderAlias) {
-//        this.senderAlias = senderAlias;
-//    }
-//
-//    /**
-//     * Sets the internal boolean isPrepared to true/false depending on what the current value is Use this for e.g. encrypting/decrypting a specific message
-//     */
-//    public void switchPrepared() {
-//        this.isPrepared = !this.isPrepared;
-//    }
 }

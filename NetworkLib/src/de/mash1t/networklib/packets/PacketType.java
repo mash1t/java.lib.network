@@ -40,4 +40,5 @@ public enum PacketType {
     Kick,
     Packet, // Abstract
     PM,
+    Position;
 }

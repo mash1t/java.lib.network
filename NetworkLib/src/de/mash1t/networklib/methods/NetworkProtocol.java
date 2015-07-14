@@ -43,14 +43,14 @@ public interface NetworkProtocol {
      * Sends a message
      *
      * @param packet
-     * @return
+     * @return result of sending
      */
     public boolean send(Packet packet);
 
     /**
      * Reads an object
      *
-     * @return
+     * @return Packet
      */
     public Packet read();
 

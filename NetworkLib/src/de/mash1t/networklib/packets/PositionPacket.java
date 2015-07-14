@@ -21,41 +21,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package de.mash1t.networklib.methods;
-
-import java.io.IOException;
-import java.net.Socket;
+package de.mash1t.networklib.packets;
 
 /**
+ * Used for positions
  *
  * @author Manuel Schmid
  */
-public class NetworkBasics {
+public class PositionPacket extends Packet {
 
-    // Preset network protocol type
-    public static NetworkProtocolType nwpType = NetworkProtocolType.TCP;
+    protected final int posX;
+    protected final int posY;
 
     /**
-     * Makes a network protocol object of type nwpType
+     * Set up packet type and position
      *
-     * @param socket Socket to connect to
-     * @throws java.io.IOException
-     * @return NetworkProtocol
+     * @param posX position on the x axis
+     * @param posY position on the y axis
      */
-    public static NetworkProtocol makeNetworkProtocolObject(Socket socket) throws IOException {
-        switch (nwpType) {
-            case TCP:
-            default:
-                return new TCP(socket);
-        }
+    public PositionPacket(int posX, int posY) {
+        this.posX = posX;
+        this.posY = posY;
+        this.packetType = PacketType.Position;
     }
 
     /**
-     * Sets the NetworkProtocolType
+     * Getter for the position on the x axis
      *
-     * @param nwpType NetworkProtocolType to set
+     * @return int position on the x axis
      */
-    public static void setNetworkProtocolType(NetworkProtocolType nwpType) {
-        NetworkBasics.nwpType = nwpType;
+    public int getPosX() {
+        return posX;
+    }
+
+    /**
+     * Getter for the position on the y axis
+     *
+     * @return int position on the y axis
+     */
+    public int getPosY() {
+        return posY;
     }
 }

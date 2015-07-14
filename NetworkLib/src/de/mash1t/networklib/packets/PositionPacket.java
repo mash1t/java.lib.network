@@ -24,21 +24,42 @@
 package de.mash1t.networklib.packets;
 
 /**
- * Enum for all available packet identifiers If you add a new custom packet, don't forget to add its identifier here
+ * Used for positions
  *
- * @author Manuel Schmid, Fabian Fink
+ * @author Manuel Schmid
  */
-public enum PacketType {
+public class PositionPacket extends Packet {
 
-    Connect,
-    Disconnect,
-    GM,
-    Info,
-    Invalid,
-    Message, // Abstract
-    Userlist,
-    Kick,
-    Packet, // Abstract
-    PM,
-    Position;
+    protected final int posX;
+    protected final int posY;
+
+    /**
+     * Set up packet type and position
+     *
+     * @param posX position on the x axis
+     * @param posY position on the y axis
+     */
+    public PositionPacket(int posX, int posY) {
+        this.posX = posX;
+        this.posY = posY;
+        this.packetType = PacketType.Position;
+    }
+
+    /**
+     * Getter for the position on the x axis
+     *
+     * @return int position on the x axis
+     */
+    public int getPosX() {
+        return posX;
+    }
+
+    /**
+     * Getter for the position on the y axis
+     *
+     * @return int position on the y axis
+     */
+    public int getPosY() {
+        return posY;
+    }
 }
